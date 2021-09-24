@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap');
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:hsl(229, 57%, 11%) ;
+    color: aliceblue;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+   
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.backGroundFooter{
+    width: 100%;
+    height: 50vh;
+    background-image: url("images/bg-desktop.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    
+}
+.container{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:240px;
+}
+.box{
+ background-color:hsl(228, 56%, 26%);
+ padding:30px;
+
+}
+.leftSide{
+     border-radius: 10px 122px 10px 10px;
+    width:350px;
+    height:201px;
+
+
+}
+.description{
+    color: #DBD9FF;
+    margin-top:15px;
+}
+.description b{
+    font-weight: 700;
+}
+.rightSide{
+    border-radius: 10px;
+    width: 540px;
+    height:154px;
+    margin: 20px 0 -25px 21px;;
+}
+.files{
+    display: flex;
+    margin: 30px 0;
+    
+}
+.files div{
+    margin-right: 20px;
+    border-radius: 10px;
+    height:48px;
+    width:48px;
+    background-repeat: no-repeat;
+    background-color:hsl(229, 57%, 11%) ;
+    background-position: center;
+}
+.files div:hover{
+    cursor: pointer;
+}
+
+.document{
+    background-image: url("images/icon-document.svg");
+}
+.folder{
+    background-image: url("images/icon-folder.svg");
+}
+.upload{
+    background-image: url("images/icon-upload.svg");
+}
+.progressBar{
+    
+    padding: 2px;
+    width: 100%;
+    height:20px;
+    border-radius:30px;
+    margin-top: 15px;
+    background-color: hsl(228, 60%, 20%);
+}
+.progressBarItem{
+    
+    position: relative;
+    padding: 2px;
+    display: block;
+    width:70%;
+    height: 100%;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    border-radius:30px ;}
+    .progressBarItem::after{
+        position: absolute;
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        top: 3px;
+        right: 4px;
+    }
+    .usageCotainer{
+        display: flex;
+        justify-content: space-between;
+        color: #DBD9FF;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .massage{
+        width: 179px;
+        height: 72px;
+        background-color: #fff;
+        color: #0C122C;
+        display: flex;
+        border-radius:  15px 15px 0 15px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: -164px;
+        right: -295px;
+    }
+    .massage::after{
+        content: "";
+        position: absolute;
+        border-right: 12px solid #fff;
+        border-top: 12px solid #fff;
+        border-left: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        top: 71px;
+        right: 0;
+    }
+    .massage span{
+        color:hsl(229, 7%, 55%) ;
+        letter-spacing: 1px;
+        text-transform:uppercase;
+        font-size: 12px;
+        margin: 4px 0 0 10px;
+        font-weight: bold;
+    }
+    .attribution { font-size: 11px; text-align: center;
+        margin-top: 40px;
+       }
+      .attribution a { color: hsl(228, 45%, 44%);
+       }
+    /* mobile  */
+    @media (max-width:375px) {
+       
+        body{
+            overflow-x:hidden;
+            background: url("images/bg-mobile.png");
+            background-repeat:no-repeat;
+        
+        }
+        .container{
+            flex-direction: column;
+            margin:30% 0;
+            
+        }
+        .box{
+            width:90%;
+              
+        }
+        .rightSide{
+            margin:15px 0 0 0;
+        }
+        .massage{
+            top: 7px;
+            right: -41px;
+            border-bottom-right-radius: 15px;
+        }
+        .massage::after{
+            display: none;
+            
+        }
+        .backGroundFooter{
+            display: none;
+        }
+        .attribution{
+           margin-bottom: 20px;
+        }
+        
+    }
