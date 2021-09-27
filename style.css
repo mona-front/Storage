@@ -2,13 +2,14 @@
 
 body{
     height: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background-color:hsl(229, 57%, 11%) ;
     color: aliceblue;
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
-   
+    overflow:hidden;
 }
 *{
     padding: 0;
@@ -21,6 +22,8 @@ body{
     background-image: url("images/bg-desktop.png");
     background-repeat: no-repeat;
     position: absolute;
+    background-position: inherit;
+
     bottom: 0;
     z-index: -1;
     
@@ -69,9 +72,15 @@ body{
     background-repeat: no-repeat;
     background-color:hsl(229, 57%, 11%) ;
     background-position: center;
+    opacity: 0.7;
+    transition: all 0.7s ease-in-out;
 }
 .files div:hover{
+    transform: scale(1.1);
     cursor: pointer;
+    opacity: 1;
+    transition: all 0.7s ease-in-out;
+
 }
 
 .document{
@@ -84,7 +93,6 @@ body{
     background-image: url("images/icon-upload.svg");
 }
 .progressBar{
-    
     padding: 2px;
     width: 100%;
     height:20px;
@@ -93,14 +101,27 @@ body{
     background-color: hsl(228, 60%, 20%);
 }
 .progressBarItem{
-    
     position: relative;
     padding: 2px;
     display: block;
     width:70%;
     height: 100%;
     background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
-    border-radius:30px ;}
+    border-radius:30px ;
+    animation: move 2s ease-in-out;
+}
+@keyframes move{
+    0%{
+        width:0;
+        transition:  width 0.7s ease-in-out;
+    }
+    100%{
+        width: 70%;
+        transition: width 0.7s ease-in-out;
+    }
+
+}
+
     .progressBarItem::after{
         position: absolute;
         content: "";
@@ -111,6 +132,8 @@ body{
         top: 3px;
         right: 4px;
     }
+
+
     .usageCotainer{
         display: flex;
         justify-content: space-between;
@@ -131,6 +154,14 @@ body{
         position: relative;
         top: -164px;
         right: -295px;
+        opacity: 0.9;
+        transition: opacity 0.7s ease-in-out;
+        
+    }
+    .massage:hover{
+        opacity: 1;
+        transition: opacity 0.7s ease-in-out;
+        cursor: pointer;
     }
     .massage::after{
         content: "";
@@ -156,7 +187,7 @@ body{
       .attribution a { color: hsl(228, 45%, 44%);
        }
     /* mobile  */
-    @media (max-width:375px) {
+    @media screen and (max-width:375px) {
        
         body{
             overflow-x:hidden;
