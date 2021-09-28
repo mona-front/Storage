@@ -9,7 +9,7 @@ body{
     color: aliceblue;
     font-size: 14px;
     font-family: 'Raleway', sans-serif;
-    overflow:hidden;
+    
 }
 *{
     padding: 0;
@@ -187,13 +187,23 @@ body{
       .attribution a { color: hsl(228, 45%, 44%);
        }
     /* mobile  */
-    @media screen and (max-width:375px) {
+    @media screen and (max-width:768px) {
+        *{
+            margin:0;
+            padding:0;
+        }
        
         body{
-            overflow-x:hidden;
-            background: url("images/bg-mobile.png");
+            width: 100vw;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url("images/bg-mobile.png");
             background-repeat:no-repeat;
-        
+            background-size:cover;
+            background-origin: border-box;
+            background-clip: border-box;
+    
         }
         .container{
             flex-direction: column;
